@@ -40,6 +40,8 @@ async function streamerInfo(){
 
         const data = result;
 
+        console.log(data)
+
         const profilePic = data.user.profile_pic
         const followers = data.followers_count.toLocaleString('en');
         
@@ -82,7 +84,26 @@ async function streamerInfo(){
         const cardBack = document.createElement('div')
         cardBack.className = "streamerCard cardBack"
         
-        cardBack.innerHTML = `<div class="btnStream"><a href="#">Ver directo</a></div>`
+        cardBack.innerHTML = `<div class="btnStream"><a href="streamerLive.html">Ver directo</a></div>`
+
+
+        const btnLive = cardBack.querySelector('.btnStream')
+        const liveContainer = document.querySelector('.live-container')
+
+        btnLive.addEventListener("click", function(){
+            e.preventDefault()
+            const streamerLive = document.createElement('div')
+            streamerLive.innerHTML = `<iframe 
+        src="https://player.kick.com/${name}" 
+        height="720" 
+        width="1280"
+        frameborder="0" 
+        scrolling="no" 
+        allowfullscreen="true"> 
+        </iframe>`
+
+        liveContainer.appendChild(streamerLive)
+        })
 
 
 
@@ -183,7 +204,7 @@ async function getViewers(name){
         const viewers = await fetch (`https://kick.com/api/v2/channels/${name}/livestream`)
             
         const viewsData = await viewers.json()
-        console.log("Respuesta viewers para", name, viewsData);
+        
 
         
         
