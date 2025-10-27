@@ -82,7 +82,7 @@ async function streamerInfo(){
         const cardBack = document.createElement('div')
         cardBack.className = "streamerCard cardBack"
         
-
+        cardBack.innerHTML = `<div class="btnStream"><a href="#">Ver directo</a></div>`
 
 
 
