@@ -63,7 +63,7 @@ async function streamerInfo(){
         
 
         const card = document.createElement('div')
-        card.className = "streamerCard"
+        card.className = "streamerCard frontCard"
         card.setAttribute("data-streamer",name)
 
 
@@ -77,6 +77,12 @@ async function streamerInfo(){
         followerText.textContent = `${followers} Seguidores` 
         card.appendChild(followerText)
         
+
+
+        const cardBack = document.createElement('div')
+        cardBack.className = "streamerCard cardBack"
+        
+
 
 
 
@@ -105,7 +111,7 @@ async function streamerInfo(){
                 path: 'https://lottie.host/fb7d8622-c1cf-49ec-ab12-842a0339649d/GCe3V3almK.json'
             })
 
-            viewers.textContent = `${viewerCount} Viewers`
+            viewers.textContent = `${viewerCount.toLocaleString()} Viewers`
 
             
 
@@ -119,10 +125,17 @@ async function streamerInfo(){
         
 
         card.appendChild(viewersContainer)
+        const cardContainer = document.createElement("div")
 
-        containerStreamers.appendChild(card)
-        
+        const cardWrapper = document.createElement("div")
+        cardWrapper.className = "cardWrapper"
+        cardWrapper.appendChild(card)
+        cardWrapper.appendChild(cardBack)
 
+
+        cardContainer.className = "cardContainer"
+        cardContainer.appendChild(cardWrapper)
+        containerStreamers.appendChild(cardContainer)
 
     
         
@@ -135,6 +148,8 @@ async function streamerInfo(){
 
     }
 }
+
+
 
 
 async function updateViewers(){
