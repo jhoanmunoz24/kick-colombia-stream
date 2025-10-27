@@ -117,7 +117,7 @@ async function streamerInfo(){
 
         }
         else{
-            viewers.textContent = "❌ El streamer no esta en vivo"
+            viewers.textContent = "❌ El streamer no está en vivo"
             viewers.style.textAlign = "center"
         }
 
@@ -167,7 +167,7 @@ async function updateViewers(){
             viewerText.textContent = `${viewerCount} Viewers`
         }
         else{
-            viewerText.textContent = "❌ El streamer no esta en vivo"
+            viewerText.textContent = "❌ El streamer no está en vivo"
         }
         
     
