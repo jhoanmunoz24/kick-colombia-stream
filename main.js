@@ -1,5 +1,5 @@
 console.log("✅ Script cargado");
-const streamers = ['davooxeneize','westcol','lonche','Spreen','mernuel','laparce','LACOBRAAA','lasapaaaaa','mrstiventc','rdjavi','elzeein']
+const streamers = ['LuquitaRodriguez','BenitoSDR','Coscu','asmongold','mernuel','laparce','LACOBRAAA','lasapaaaaa','mrstiventc','rdjavi','elzeein']
 const containerStreamers = document.getElementById("streamer-container")
 
 async function streamerData(name){
@@ -90,7 +90,7 @@ async function streamerInfo(){
         const btnLive = cardBack.querySelector('.btnStream')
         const liveContainer = document.querySelector('.live-container')
 
-        btnLive.addEventListener("click", function(){
+        btnLive.addEventListener("click", function(e){
             e.preventDefault()
             const streamerLive = document.createElement('div')
             streamerLive.innerHTML = `<iframe 
